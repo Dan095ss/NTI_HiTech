@@ -11,5 +11,6 @@ async def root():
 
 @app.post("/get_data")
 async def get_data(data:dict):
+    global temp
     temp = data['data']['uplink_message']['decoded_payload']['temperature']
     return {"success": True}
